@@ -47,9 +47,9 @@ fun PreReservationCard(
 
     // Colores según estado
     val cardColor = when (preReservation.status) {
-        PreReservationStatus.PENDING -> Color(0xFFFFF3E0) // Anaranjado pálido
-        PreReservationStatus.CONFIRMED -> Color(0xFFC8E6C9) // Verde suave
-        PreReservationStatus.REJECTED -> Color(0xFFFFCDD2) // Rojo pálido
+        PreReservationStatus.PENDING -> Color(0xFFFFD54F) // Ámbar cálido
+        PreReservationStatus.CONFIRMED -> Color(0xFF81C784) // Verde esmeralda suave
+        PreReservationStatus.REJECTED -> Color(0xFFEF5350) // Rojo coral
     }
 
     Card(
@@ -77,11 +77,13 @@ fun PreReservationCard(
             verticalArrangement = Arrangement.spacedBy(8.dp)
         ) {
             Text(
+                color = Color.Black,
                 text = preReservation.room.name ?: "Habitación",
                 style = MaterialTheme.typography.titleMedium,
                 fontWeight = FontWeight.Bold
             )
             Text(
+                color = Color.DarkGray,
                 text = "Fechas: ${preReservation.startDate} - ${preReservation.endDate}",
                 style = MaterialTheme.typography.bodyMedium
             )
@@ -95,13 +97,14 @@ fun PreReservationCard(
                 }",
                 style = MaterialTheme.typography.bodyMedium,
                 color = when (preReservation.status) {
-                    PreReservationStatus.PENDING -> Color(0xFFF57C00) // Anaranjado oscuro
-                    PreReservationStatus.CONFIRMED -> Color(0xFF2E7D32) // Verde oscuro
-                    PreReservationStatus.REJECTED -> Color(0xFFD32F2F) // Rojo oscuro
+                    PreReservationStatus.PENDING -> Color(0xFFE65100) // Naranja oscuro
+                    PreReservationStatus.CONFIRMED -> Color(0xFF1B5E20) // Verde oscuro
+                    PreReservationStatus.REJECTED -> Color(0xFFB71C1C) // Rojo oscuro
                 }
             )
             val totalNights = preReservation.startDate.daysUntil(preReservation.endDate)
             Text(
+                color = Color.Black,
                 text = "Total: $${String.format("%.2f", totalNights * (preReservation.room.precio?.toDouble() ?: 0.0))} ($totalNights noches)",
                 style = MaterialTheme.typography.bodyMedium
             )

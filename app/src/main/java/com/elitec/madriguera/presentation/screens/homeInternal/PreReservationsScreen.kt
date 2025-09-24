@@ -133,7 +133,7 @@ fun PreReservationsScreen(
                 // Título
                 item {
                     Text(
-                        text = "Tus Prereservas",
+                        text = "Tus Reservaciones",
                         style = MaterialTheme.typography.displaySmall,
                         color = MaterialTheme.colorScheme.onSurface,
                         textAlign = TextAlign.Center,
