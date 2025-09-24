@@ -39,6 +39,7 @@ import com.elitec.madriguera.R
 import com.elitec.madriguera.presentation.components.RoomCard
 import com.elitec.madriguera.presentation.navigation.HomeScreens
 import com.elitec.madriguera.presentation.navigation.InternalHome
+import com.elitec.madriguera.presentation.navigation.Reservation
 import io.appwrite.models.Room
 import io.github.composefluent.component.Icon
 
@@ -185,7 +186,7 @@ fun InternalHomeScreen(
             RoomCard(
                 room = room,
                 onClick = {
-                    navigateTo(InternalHome)
+                    navigateTo(Reservation("1"))
                 }
             )
         }
